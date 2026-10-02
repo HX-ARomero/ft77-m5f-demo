@@ -18,6 +18,62 @@
 
 Todo fluye de forma clara y separada de responsabilidades.
 
+```txt
+                ┌────────────────────────────────┐
+                │  CartProvider (Componente)     │
+                │                                │
+                │  Dueño del estado y funciones: │
+                │   • cartItems                  │
+                │   • addToCart()                │
+                │   • removeFromCart()           │
+    ╔═══════════│   • clearCart()                │══════════╗
+    ║           └──────────────┬─────────────────┘          ║
+    ║                          │      CartContext           ║
+    ║                          ▼                            ║
+    ║                  ┌───────────────┐                    ║
+    ║                  │      App      │                    ║
+    ║                  └───────┬───────┘                    ║
+    ║                          │                            ║
+    ║        ┌─────────────────┼────────────────┐           ║
+    ║        │                 │                │           ║
+    ║        ▼                 ▼                ▼           ║
+    ║  ┌──────────────┐  ┌─────────────┐  ┌──────────────┐  ║
+    ║  │    Header    │  │ ProductList │  │ FavoriteList │  ║
+    ║  └──────────────┘  └─────────────┘  └──────────────┘  ║
+    ╚═══════════════════════════════════════════════════════╝
+              ▲                 ▲                ▲
+              │                 │                │
+          useCart()         useCart()        useCart()
+              │                 │                │
+              └─────────────────┼────────────────┘
+                                │
+                            🪝 HOOK
+
+
+
+
+  ┌─────────────────────────────────┐     ┌──────────────────────┐     ┌────────────────────┐     ╔═════════════╗
+  │     UI (Interfaz de Usuario)    │ <-> │ Contextos / Estados  │ <-> │ Servicios          │ <-> ║  Firestore  ║
+  │ Presentacionales / Contenedores │     │                      │     │                    │     ║             ║
+  └─────────────────────────────────┘     └──────────────────────┘     └────────────────────┘     ╚═════════════╝
+   
+   Mostrar Datos                           Guardar Datos (Front)        Solicitar Datos            Guardar Datos (BBDD)
+ 
+   Category: Monitors                        products: [ monitors ]
+                                             loading: false
+   Prefix: ASUS                              error: "Este es el error"
+                                             category: monitors
+                                             prefix: ASUS
+                                             lastDoc: producto3
+                                             hasMore: false
+
+Firestore: Colección Desordenada
+
+1 2 3 4 5 6 7 8 
+            | | |
+                cursor
+```
+
 ---
 
 [⬅️ Volver al README](../../README.md)
