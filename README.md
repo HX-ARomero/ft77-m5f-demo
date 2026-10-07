@@ -14,6 +14,7 @@
 - [06 - Autenticación con Firebase y Roles](./readmes/06-auth/06-auth.md)
 - [07 - Panel de Admin & AWS S3](./readmes/07-admin_panel/07-admin_panel.md)
     - [Crear Bucket en AWS S3](./readmes/07-admin_panel/07-bucket.md)
+    - [Flujo de trabajo en AWS S3](./readmes/07-admin_panel/07-s3_flow.md)
 - 08 - Checkout & Orders
     - [useState, Context & Reducer](./readmes/08-checkout/08-context_reducer.md)
     - [Firestore Rules](./readmes/08-checkout/08-firestore_rules.md)
