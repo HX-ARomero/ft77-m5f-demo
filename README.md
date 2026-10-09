@@ -22,6 +22,7 @@
     - [Ciclo de vida del Software](./readmes/09-testing/09-ciclo-software.md)
     - [Testing](./readmes/09-testing/09-testing.md)
     - [Deployment](./readmes/09-testing/09-deployment.md)
+    - [Resumen & Datos Extra](./readmes/09-testing/09-datos.md)
 
 - 10 - REPASO
     - [Repaso I](./readmes/10-repaso/10-repaso.md)
